@@ -17,4 +17,7 @@ pip install -r requirements.txt
 
 ## setup.py 
 
-
+## Git
+Add a .gitignore file
+to initialise it: git init
+Anything inside .gitignore will not be visible on git
