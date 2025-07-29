@@ -43,7 +43,7 @@ if it gives error use: pip install ipykernel
 
 ## Requirement.txt
 As the project progresses, it is manually updated and everything inside it is installed.
-install -r requirement.txt
+pip install -r requirement.txt
 
 ## .env file
 create .env file and add the following:
@@ -52,3 +52,10 @@ Add google gemini key
 
 GROQ_API_KEY="YOUR_GROQ_API_KEY"
 GOOGLE_API_KEY="YOUR_GOOGLE_API_KEY"
+
+# Logging and Exception:
+
+Logging can be done using 
+1. Custom log file - txt, pdf, doc files. 
+2. Python built in module - struct log, logging etc.
+
