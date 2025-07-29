@@ -46,5 +46,9 @@ As the project progresses, it is manually updated and everything inside it is in
 install -r requirement.txt
 
 ## .env file
-
+create .env file and add the following:
 Add the groq api key
+Add google gemini key
+
+GROQ_API_KEY="YOUR_GROQ_API_KEY"
+GOOGLE_API_KEY="YOUR_GOOGLE_API_KEY"
