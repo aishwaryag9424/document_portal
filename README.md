@@ -12,6 +12,7 @@ conda remove --name document_portal --all
 To create a env folder for the virtual environment: 
 ​​conda create -p env python=3.11
 conda activate ./env
+conda activate /Users/aishwaryagopalakrishnan/document_portal/env
 
 Create env: python3 -m venv env
 Activate: source env/bin/activate
@@ -59,3 +60,9 @@ Logging can be done using
 1. Custom log file - txt, pdf, doc files. 
 2. Python built in module - struct log, logging etc.
 
+Logging Levels: The numeric values of logging levels are given in the following table. These are primarily of interest if you want to define your own levels, and need them to have specific values relative to the predefined levels. If you define a level with the same numeric value, it overwrites the predefined value; the predefined name is lost.
+
+![alt text](image.png)
+
+
+/Users/aishwaryagopalakrishnan/document_portal/logger/custom_logger.py
