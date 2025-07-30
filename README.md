@@ -64,5 +64,3 @@ Logging Levels: The numeric values of logging levels are given in the following 
 
 ![alt text](image.png)
 
-
-/Users/aishwaryagopalakrishnan/document_portal/logger/custom_logger.py
