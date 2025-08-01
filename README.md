@@ -64,3 +64,7 @@ Logging Levels: The numeric values of logging levels are given in the following 
 
 ![alt text](image.png)
 
+Handlers are responsible for sending log messages to specific destinations. For instance, a FileHandler directs logs to a file, a StreamHandler sends them to the console (stdout/stderr), and other handlers might send them to network locations, databases, or other services.
+
+# Config yml file:
+A central repository to store config. So that we dont have to make changes in each file. It can be changed in this config file.
