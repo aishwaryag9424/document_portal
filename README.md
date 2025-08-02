@@ -68,3 +68,21 @@ Handlers are responsible for sending log messages to specific destinations. For 
 
 # Config yml file:
 A central repository to store config. So that we dont have to make changes in each file. It can be changed in this config file.
+
+## Data versioning - using session folder
+
+Data versioning in MLOps (Machine Learning Operations) is the practice of systematically tracking, managing, and storing different versions of datasets used throughout the machine learning lifecycle. It is crucial for ensuring reproducibility, traceability, and efficient collaboration in ML projects. Tools: 
+
+### DVC (Data Version Control):
+An open-source tool that integrates with Git to version large datasets and machine learning models. It stores data metadata in Git and the actual data in external storage (e.g., cloud storage, local file system), enabling efficient versioning of large files.
+### LakeFS:
+An open-source platform that provides Git-like version control for data lakes, allowing for branching, merging, and committing data changes in object storage.
+### Pachyderm:
+A platform for building version-controlled, automated data pipelines, offering data versioning as part of its end-to-end data management capabilities.
+### Feature Stores:
+While primarily for feature management, feature stores often incorporate versioning mechanisms for features, ensuring consistency across different models and deployments.
+
+In this project, If a pdf comes every day, the pdf is embedded into vector db. Next day a new one comes, and data execution is run then today's file + yesterday's file will again be embedded in the db, causing data redundancy. Then the previous data is deleted (stored in archive) but no changes to embeddings. This is data versioning wrt every execution
+
+
+

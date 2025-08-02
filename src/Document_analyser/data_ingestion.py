@@ -12,14 +12,16 @@ class DocumentHandler:
     """
     def __init__(self,data_dir=None,session_id=None):
         try:
-            self.log=CustomLogger().get_logger(__name__)
-            self.data_dir = data_dir or os.getenv(
+            #initialize log 
+            self.log=CustomLogger().get_logger(__name__) 
+            #data directory - checks if data_dir has any value if not then takes DATA_STORAGE_PATH or else takes path of document_analysis that contains the pdf file
+            self.data_dir = data_dir or os.getenv(       
                 "DATA_STORAGE_PATH",
                 os.path.join(os.getcwd(), "data", "document_analysis")
             )
+            #to create session id - uui - data for every execution
             self.session_id = session_id or f"session_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}_{uuid.uuid4().hex[:8]}"
-            
-            # Create base session directory
+            # Create base session directory - path where it will be available under data>document_analysis>session_date_time_uuid
             self.session_path = os.path.join(self.data_dir, self.session_id)
             
             os.makedirs(self.session_path, exist_ok=True)
@@ -33,11 +35,12 @@ class DocumentHandler:
 
     def save_pdf(self,uploaded_file):
         try:
+            #Get the file
             filename = os.path.basename(uploaded_file.name)
-            
+            # check if it is a pdf file
             if not filename.lower().endswith(".pdf"):
                 raise DocumentPortalException("Invalid file type. Only PDFs are allowed.")
-
+            # data>document_analysis>session_date_time_uuid + filename
             save_path = os.path.join(self.session_path, filename)
             
             with open(save_path, "wb") as f:
@@ -46,6 +49,7 @@ class DocumentHandler:
             self.log.info("PDF saved successfully", file=filename, save_path=save_path, session_id=self.session_id)
             
             return save_path
+
         
         except Exception as e:
             self.log.error(f"Error saving PDF: {e}")
@@ -68,19 +72,23 @@ class DocumentHandler:
 if __name__ == "__main__":
     from pathlib import Path
     from io import BytesIO
-    
-    pdf_path=r"C:\\Users\\sunny\\document_portal\\data\\document_analysis\\sample.pdf"
+
+ 
+    pdf_path=r"/Users/aishwaryagopalakrishnan/document_portal/data/document_analysis/NIPS-2017-attention-is-all-you-need-Paper.pdf"
     class DummnyFile:
+        # will store data in memory and buffer
         def __init__(self,file_path):
+            # Path() will create system compalible path
             self.name = Path(file_path).name
             self._file_path = file_path
+
         def getbuffer(self):
             return open(self._file_path, "rb").read()
         
     dummy_pdf = DummnyFile(pdf_path)
     
     handler = DocumentHandler()
-    
+
     try:
         saved_path=handler.save_pdf(dummy_pdf)
         print(saved_path)
