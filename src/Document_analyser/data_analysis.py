@@ -39,6 +39,7 @@ class DocumentAnalyzer:
         Analyze a document's text and extract structured metadata & summary.
         """
         try:
+            # creating the chain
             chain = self.prompt | self.llm | self.fixing_parser
             
             self.log.info("Meta-data analysis chain initialized")
