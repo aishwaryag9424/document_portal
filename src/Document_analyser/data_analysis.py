@@ -12,6 +12,7 @@ class DocumentAnalyzer:
     """
     Analyzes documents using a pre-trained model.
     Automatically logs all actions and supports session-based organization.
+    Summaries the document.
     """
     def __init__(self):
         self.log = CustomLogger().get_logger(__name__)
