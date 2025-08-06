@@ -1,6 +1,7 @@
 import sys
 import uuid
 from pathlib import Path
+#fitz is from PyMuPDF library
 import fitz
 from datetime import datetime, timezone
 from logger.custom_logger import CustomLogger
@@ -58,7 +59,9 @@ class DocumentIngestion:
                 for page_num in range(doc.page_count):
                     page = doc.load_page(page_num)
                     text = page.get_text()  # type: ignore
+                    # If the extracted text isn’t just whitespace, it's added to the list.
                     if text.strip():
+                        # ags each page with a header like --- Page 1 --- to keep text organized.
                         all_text.append(f"\n --- Page {page_num + 1} --- \n{text}")
 
             self.log.info("PDF read successfully", file=str(pdf_path), pages=len(all_text))
