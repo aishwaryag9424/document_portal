@@ -73,7 +73,8 @@ class DocumentIngestion:
 
     def combine_documents(self) -> str:
         """
-        Combine content of all PDFs in session folder into a single string.
+        Combine content of all PDFs in session folder into a SINGLE string. PDF1 + PDF2
+        This will be passed to LLM to check both sentance and make comparison
         """
         try:
             doc_parts = []
@@ -82,7 +83,7 @@ class DocumentIngestion:
                     content = self.read_pdf(file)
                     doc_parts.append(f"Document: {file.name}\n{content}")
 
-            combined_text = "\n\n".join(doc_parts)
+            combined_text = "\n\n".join(doc_parts) # combined_text = "File1: text here \n\n File2: text 2 here"
             self.log.info("Documents combined", count=len(doc_parts), session=self.session_id)
             return combined_text
 

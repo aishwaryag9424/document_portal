@@ -1,3 +1,18 @@
+# About the Project
+
+This is an Application to analyse, compare documents, upload one or more documents and chat with agent about the chat.
+
+Modules:
+
+1. Document Analyser
+2. Document Compare
+3. Chat module with single document
+4. Chat module with multiple documents.
+
+In the first two modules, the data is parsed from the document (PDF) and passed to LLM. Inputs along with prompts is passed to LLM, the output is validated using pydentic.
+
+Chat modules are implemented using RAG.
+
 # Commands Used:
 
 ## Virtual Environment:
@@ -16,6 +31,12 @@ conda activate /Users/aishwaryagopalakrishnan/document_portal/env
 
 Create env: python3 -m venv env
 Activate: source env/bin/activate
+
+## To open vs code from terminal
+
+cd path
+
+code .
 
 ## Installing Requirements of the project
 To install all packages
@@ -83,6 +104,3 @@ A platform for building version-controlled, automated data pipelines, offering d
 While primarily for feature management, feature stores often incorporate versioning mechanisms for features, ensuring consistency across different models and deployments.
 
 In this project, If a pdf comes every day, the pdf is embedded into vector db. Next day a new one comes, and data execution is run then today's file + yesterday's file will again be embedded in the db, causing data redundancy. Then the previous data is deleted (stored in archive) but no changes to embeddings. This is data versioning wrt every execution
-
-
-
