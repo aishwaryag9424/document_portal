@@ -8,11 +8,11 @@ from langchain_community.vectorstores import FAISS
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
-from utils.model_loader import ModelLoader
+from utils.Model_loader import ModelLoader
 from exception.custom_exception import DocumentPortalException
 from logger.custom_logger import CustomLogger
 from prompt.prompt_library import PROMPT_REGISTRY
-from model.models import PromptType
+from model.model import PromptType
 
 load_dotenv()
 

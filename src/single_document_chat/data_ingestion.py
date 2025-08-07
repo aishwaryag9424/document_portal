@@ -7,7 +7,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from logger.custom_logger import CustomLogger
 from exception.custom_exception import DocumentPortalException
-from utils.model_loader import ModelLoader
+from utils.Model_loader import ModelLoader
 
 
 class SingleDocIngestor:
@@ -48,6 +48,7 @@ class SingleDocIngestor:
         
     def _create_retriever(self,documents):
         try:
+            # splitting the document
             splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=300)
             chunks = splitter.split_documents(documents)
             self.log.info("Documents split into chunks", count=len(chunks))
