@@ -32,10 +32,12 @@ class ConversationalRAG:
             )
             self.log.info("Created history-aware retriever", session_id=session_id)
 
+            #create_stuff_documents_chain is a bult in function in langchain
             self.qa_chain = create_stuff_documents_chain(self.llm, self.qa_prompt)
             self.rag_chain = create_retrieval_chain(self.history_aware_retriever, self.qa_chain)
             self.log.info("Created RAG chain", session_id=session_id)
 
+            # for message history
             self.chain = RunnableWithMessageHistory(
                 self.rag_chain,
                 self._get_session_history,

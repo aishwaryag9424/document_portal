@@ -10,8 +10,11 @@ Modules:
 4. Chat module with multiple documents.
 
 In the first two modules, the data is parsed from the document (PDF) and passed to LLM. Inputs along with prompts is passed to LLM, the output is validated using pydentic.
+I have used PyMupdf/Fitz, it creates raw text and it was passed to LLM for summary/analysis, comparison.
 
-Chat modules are implemented using RAG.
+Chat modules are implemented using RAG. For conversational module, cant pass raw text to LLM to get answers. So Embeddings has to be created.
+
+Logging: With every execution a session folder is created using uuid, It is used for versioning.
 
 # Commands Used:
 
@@ -55,6 +58,8 @@ pip install -e.
 Add a .gitignore file
 to initialise it: git init
 Anything inside .gitignore will not be visible on git
+
+to uncommit: git reset --soft HEAD~1    
 
 ## Experiments.ipynb
 used to testing.
