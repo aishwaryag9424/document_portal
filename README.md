@@ -72,6 +72,8 @@ if it gives error use: pip install ipykernel
 As the project progresses, it is manually updated and everything inside it is installed.
 pip install -r requirement.txt
 
+provide the versions of each packages.
+
 ## .env file
 create .env file and add the following:
 Add the groq api key
