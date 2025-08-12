@@ -70,7 +70,7 @@ if it gives error use: pip install ipykernel
 
 ## Requirement.txt
 As the project progresses, it is manually updated and everything inside it is installed.
-pip install -r requirement.txt
+pip install -r requirements.txt
 
 provide the versions of each packages.
 
@@ -111,3 +111,9 @@ A platform for building version-controlled, automated data pipelines, offering d
 While primarily for feature management, feature stores often incorporate versioning mechanisms for features, ensuring consistency across different models and deployments.
 
 In this project, If a pdf comes every day, the pdf is embedded into vector db. Next day a new one comes, and data execution is run then today's file + yesterday's file will again be embedded in the db, causing data redundancy. Then the previous data is deleted (stored in archive) but no changes to embeddings. This is data versioning wrt every execution
+
+## To so fast api testing: 
+
+uvicorn is a ASGI server; asynchronous server gateway interface
+
+/Users/user_name/document_portal/env/bin/python -m uvicorn main:app --reload  
