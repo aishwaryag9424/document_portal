@@ -117,3 +117,27 @@ In this project, If a pdf comes every day, the pdf is embedded into vector db. N
 uvicorn is a ASGI server; asynchronous server gateway interface
 
 /Users/user_name/document_portal/env/bin/python -m uvicorn main:app --reload  
+
+It is done to consume the backend code (src) through the RESTFUL API using FastAPI. API is created to serve the application over the internet and deploy it, make it public. Initially it runs over the local host.
+
+The client (browser), where the application runs, sends a GET request to the server (backend) for the HTML file (UI, e.g., index.html). The server processes the request and sends back the HTML in the HTTP response. The browser then renders the page for the user.
+
+   ┌──────────────┐                  ┌────────────────────┐
+   │   Client      │                  │      Server        │
+   │ (Browser)     │                  │  (Backend code)    │
+   └──────┬────────┘                  └─────────┬──────────┘
+          │                                     │
+          │  1. GET /index.html                 │
+          ├────────────────────────────────────>│
+          │                                     │
+          │                   2. Respond with   │
+          │        HTML (index.html) + assets   │
+          │<────────────────────────────────────┤
+          │                                     │
+   3. Render HTML + assets to display UI        │
+          │                                     │
+
+
+
+In GET: client will request for something
+POST: filling something in the UI and getting something from the server
