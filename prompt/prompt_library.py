@@ -7,9 +7,21 @@ Return ONLY valid JSON matching the exact schema below.
 
 {format_instructions}
 
-Analyze this document:
+Analyze the document and extract the following fields:
+- Title
+- Summary (3-5 bullet points)
+- Author
+- DateCreated
+- LastModifiedDate
+- Publisher
+- Language
+- PageCount (or "Not Available")
+- SentimentTone (e.g., Positive, Neutral, Negative)
+
+Document:
 {document_text}
 """)
+
 
 # Prompt for document comparison
 document_comparison_prompt = ChatPromptTemplate.from_template("""

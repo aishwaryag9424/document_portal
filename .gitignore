@@ -6,3 +6,6 @@ logs/
 *.pyc
 document_portal.egg-info
 archive
+faiss_index/
+main_archive/
+data/
