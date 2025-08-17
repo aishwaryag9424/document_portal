@@ -61,6 +61,8 @@ Anything inside .gitignore will not be visible on git
 
 to uncommit: git reset --soft HEAD~1    
 
+to create a dev branch and switch to that: git checkout -b dev
+
 ## Experiments.ipynb
 used to testing.
 choose kernel -> choose python interpreter

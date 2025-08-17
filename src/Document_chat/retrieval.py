@@ -8,11 +8,11 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_community.vectorstores import FAISS
 
-from utils.Model_loader import ModelLoader
+from utils.model_loader import ModelLoader
 from exception.custom_exception import DocumentPortalException
 from logger import GLOBAL_LOGGER as log
 from prompt.prompt_library import PROMPT_REGISTRY
-from model.model import PromptType
+from model.models import PromptType
 
 
 class ConversationalRAG:

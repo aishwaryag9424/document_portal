@@ -11,7 +11,7 @@ import fitz  # PyMuPDF
 from langchain.schema import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
-from utils.Model_loader import ModelLoader
+from utils.model_loader import ModelLoader
 from logger import GLOBAL_LOGGER as log
 from exception.custom_exception import DocumentPortalException
 from utils.file_io import generate_session_id, save_uploaded_files
@@ -282,3 +282,4 @@ class DocumentComparator:
         except Exception as e:
             log.error("Error cleaning old sessions", error=str(e))
             raise DocumentPortalException("Error cleaning old sessions", e) from e
+
