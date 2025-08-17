@@ -61,7 +61,12 @@ Anything inside .gitignore will not be visible on git
 
 to uncommit: git reset --soft HEAD~1    
 
-to create a dev branch and switch to that: git checkout -b dev
+to switch t dev: git checkout -b dev
+
+Any development is pushed to dev and from there it is merged to main using Pull Request.
+![alt text](<Screenshot 2025-08-17 at 3.17.38 PM.png>)
+
+to switch to main: git switch main
 
 ## Experiments.ipynb
 used to testing.
