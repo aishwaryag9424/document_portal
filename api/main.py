@@ -7,14 +7,14 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pathlib import Path
 
-from src.Document_ingestion.Data_ingestion import (
+from src.document_ingestion.data_ingestion import (
     DocHandler,
     DocumentComparator,
     ChatIngestor,
 )
-from src.Document_analyser.data_analysis import DocumentAnalyzer
-from src.Document_compare.document_comparator import DocumentComparatorLLM
-from src.Document_chat.retrieval import ConversationalRAG
+from src.document_analyzer.data_analysis import DocumentAnalyzer
+from src.document_compare.document_comparator import DocumentComparatorLLM
+from src.document_chat.retrieval import ConversationalRAG
 from utils.document_ops import FastAPIFileAdapter,read_pdf_via_handler
 from logger import GLOBAL_LOGGER as log
 
