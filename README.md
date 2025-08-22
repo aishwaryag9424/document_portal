@@ -148,3 +148,27 @@ The client (browser), where the application runs, sends a GET request to the ser
 
 In GET: client will request for something
 POST: filling something in the UI and getting something from the server
+
+# Deployment
+
+## Docker
+
+1. Install docker desktop on local system
+2. Run the docker engine in your system
+3. Create docker file inside project folder
+4. Build the image from current project repo.
+command:  docker run <options> <image_name>:<tag>
+
+
+docker build -t aishwaryag9424/document-portal-app
+5. Run the image inside container
+
+command: docker run -d -p <host_port>:<container_port> --name <container_name> <image_name>:<tag>
+
+docker run -d -p 8080:8080 --name aishwaryag9424/document-portal-app
+6. optional - push the image to docker hub
+
+Deploy using Github action, ECR, ECR+Fragate
+
+Image for this project is created on git hub action server and consumed in ECR. Running in ECR and fargate.
+Can also push the image to docker hub.
