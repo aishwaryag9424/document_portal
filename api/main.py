@@ -7,7 +7,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pathlib import Path
 
-from src.document_ingestion.data_ingestion import (
+from src.document_ingestion.Data_ingestion import (
     DocHandler,
     DocumentComparator,
     ChatIngestor,

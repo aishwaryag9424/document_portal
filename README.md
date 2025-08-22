@@ -165,7 +165,7 @@ docker build -t aishwaryag9424/document-portal-app
 
 command: docker run -d -p <host_port>:<container_port> --name <container_name> <image_name>:<tag>
 
-docker run -d -p 8080:8080 --name aishwaryag9424/document-portal-app
+docker run -d -p 8080:8080 --name my-doc-portal aishwaryag9424/document-portal-app
 6. optional - push the image to docker hub
 
 Deploy using Github action, ECR, ECR+Fragate
