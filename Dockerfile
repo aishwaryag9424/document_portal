@@ -1,22 +1,23 @@
-# Use official Python image
+# Use official Python image from docker hub
 FROM python:3.10-slim
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Set workdir
+# Set workdir as app
 WORKDIR /app
 
-# Install OS dependencies
+# Update container system, Install OS dependencies
 RUN apt-get update && apt-get install -y build-essential poppler-utils && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements
+# from local folder Copy requirements to current folder "." 
 COPY requirements.txt .
 
+#copy .env file to container
 COPY .env .
 
-# Copy project files
+# Copy entire project files to container directory
 COPY . .
 
 # Install dependencies
