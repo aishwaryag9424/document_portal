@@ -172,3 +172,20 @@ Deploy using Github action, ECR, ECR+Fragate
 
 Image for this project is created on git hub action server and consumed in ECR. Running in ECR and fargate.
 Can also push the image to docker hub.
+
+## Deployment in AWS
+
+Using Githib Action, pushing code (main branch) from local to the server. Server is provided by github actions, where it gets triggered. 
+Executing aws.yml file on server, that contains all the configurations. 
+Then docker image is created and it is pushed to Elastic container repository (ECR: it is used for holding docker image). 
+Then pushed to ECS + Fargate to consume the image.
+ECS is orchestration service, it orchestrate the container. Fargate is a launch type for ECS. If Ec2 is selected as launch type then we need to manage the servers. But Fargate is serverless. 
+
+![alt text](workflow.png)
+
+aws.yml - is triggering the git hub action server
+
+task-defination.json - instructions for ECS
+
+template.yml - it is for creating or automating the INFRA setup pipelines
+the INFRA includes: ECR repo, VPC (with 2 public subnets), Internet gateway, ECS Cluster, Task definition (FARGATE), ECS service (no load balancer), IAM role, security group.
